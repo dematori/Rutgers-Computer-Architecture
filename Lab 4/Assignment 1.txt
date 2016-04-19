@@ -1,0 +1,10 @@
+# Jeffrey Huang
+# RUID: 159-00-4687
+# NETID: jh1127
+# Assignment 1
+										#	RegDst	ALUSrc	MemtoReg	RegWrite	MemRead		Branch	ALUOp[1:0]	jump
+	addi $t0, $t0, 128					# 		0		1		0			1			1		0		00			00
+	sw $t0, 32($s0)						# 		x		1		x			0			0		0		00			00
+	bneqz $t1, EXIT						# 		0		0		0			0			0		1		01			00
+	xor $s0, $t1, $t2					# 		1		1		1			1			0		0		10			00
+	jal print							# 		x		1		x			0			1		x		xx			10
